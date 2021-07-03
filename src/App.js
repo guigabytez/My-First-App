@@ -32,13 +32,7 @@ class App extends Component {
     // const [inputText, setInputText] = useState();
 
     return (
-      <div className="App">
-        <h1>React Lesson</h1>
-
-        
-        <label>Parent: </label>
-        <input type="text" placeholder="Type anything..." id="searchBox" onChange={this.handleOnChange}/>
-        <button type="reset" onClick={this.handleClick}>Clear</button>
+      <div className="App">        
         <Child parentSearch={this.state.search}/>
       </div>
     );
