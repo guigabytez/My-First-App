@@ -16,7 +16,7 @@ class App extends Component {
     this.setState({
       search: e.target.value
     })
-    console.log("search ..",e.target.value);
+    console.log("search",e.target.value);
   }
 
   handleClick = () => {
