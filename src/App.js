@@ -1,43 +1,28 @@
-import { Component } from 'react';
-import './App.css';
-import Child from './components/Child'
 import React, {useState} from 'react'
+import { Layout } from 'antd';
 
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      search: "",      
-    }
-    this.handleOnChange = this.handleOnChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
-  }
-  handleOnChange = (e) => {
-    this.setState({
-      search: e.target.value
-    })
-    console.log("search",e.target.value);
+import Sidebar from './components/navigation/Sidebar'
+import Navbar from './components/navigation/Navbar'
+import Content from './components/navigation/Contents'
+
+
+const App = () => {
+  const [ isCollapsed, setIsCollapsed ] = useState()
+
+  const callBackToggle = (toggleData) => {
+    setIsCollapsed(toggleData)
   }
 
-  handleClick = () => {
-   
-    this.setState({
-      search: document.getElementById('searchBox').value='',
-      
-    })
-    
-  }
-
-  render(){
-    // const [inputText, setInputText] = useState();
-
-    return (
-      <div className="App">        
-        <Child parentSearch={this.state.search}/>
-      </div>
-    );
-  }
- 
+  return (
+    <>
+      <Layout>
+        <Sidebar isCollapsed={isCollapsed}/>
+        <Layout>
+          <Navbar isCollapsed={isCollapsed} onCallBackToggle={callBackToggle}/>
+          <Content />
+        </Layout>
+      </Layout>
+    </>
+  )
 }
-
-export default App;
+export default App
