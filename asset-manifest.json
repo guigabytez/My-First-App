@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/guigabytez/firstreact-boilerplate/static/css/main.e43eae17.chunk.css",
+    "main.js": "/guigabytez/firstreact-boilerplate/static/js/main.45478349.chunk.js",
+    "main.js.map": "/guigabytez/firstreact-boilerplate/static/js/main.45478349.chunk.js.map",
+    "runtime-main.js": "/guigabytez/firstreact-boilerplate/static/js/runtime-main.682aa273.js",
+    "runtime-main.js.map": "/guigabytez/firstreact-boilerplate/static/js/runtime-main.682aa273.js.map",
+    "static/css/2.ba8a8a05.chunk.css": "/guigabytez/firstreact-boilerplate/static/css/2.ba8a8a05.chunk.css",
+    "static/js/2.2e3e8fb4.chunk.js": "/guigabytez/firstreact-boilerplate/static/js/2.2e3e8fb4.chunk.js",
+    "static/js/2.2e3e8fb4.chunk.js.map": "/guigabytez/firstreact-boilerplate/static/js/2.2e3e8fb4.chunk.js.map",
+    "static/js/3.32676cf7.chunk.js": "/guigabytez/firstreact-boilerplate/static/js/3.32676cf7.chunk.js",
+    "static/js/3.32676cf7.chunk.js.map": "/guigabytez/firstreact-boilerplate/static/js/3.32676cf7.chunk.js.map",
+    "index.html": "/guigabytez/firstreact-boilerplate/index.html",
+    "static/css/2.ba8a8a05.chunk.css.map": "/guigabytez/firstreact-boilerplate/static/css/2.ba8a8a05.chunk.css.map",
+    "static/css/main.e43eae17.chunk.css.map": "/guigabytez/firstreact-boilerplate/static/css/main.e43eae17.chunk.css.map",
+    "static/js/2.2e3e8fb4.chunk.js.LICENSE.txt": "/guigabytez/firstreact-boilerplate/static/js/2.2e3e8fb4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.682aa273.js",
+    "static/css/2.ba8a8a05.chunk.css",
+    "static/js/2.2e3e8fb4.chunk.js",
+    "static/css/main.e43eae17.chunk.css",
+    "static/js/main.45478349.chunk.js"
+  ]
+}
