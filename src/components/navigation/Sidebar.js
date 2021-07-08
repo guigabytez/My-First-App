@@ -6,7 +6,6 @@ import {
     UploadOutlined,
 } from '@ant-design/icons'
 import { 
-    Switch,
     Link
 } from 'react-router-dom'
 
