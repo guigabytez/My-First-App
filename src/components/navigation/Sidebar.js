@@ -4,7 +4,11 @@ import {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
-} from '@ant-design/icons';
+} from '@ant-design/icons'
+import { 
+    Switch,
+    Link
+} from 'react-router-dom'
 
 import '../../styles/sidebar.css'
 
@@ -12,19 +16,27 @@ const { Sider } = Layout
 
 
 const Sidebar = (props) => {
+    
+    
     return (
         <Sider trigger={null} collapsible collapsed={props.isCollapsed} >
             <div className="logo" />
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} >
-                <Menu.Item key="1" icon={<UserOutlined />}>
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={['/']} >
+                <Menu.Item key="/" icon={<UserOutlined />}>
                     Dashboard
+                    <Link to="/" />
                 </Menu.Item>
-                <Menu.Item key="2" icon={<VideoCameraOutlined />}>
+                
+                <Menu.Item key="/activity" icon={<VideoCameraOutlined />}>
                     Activity
+                    <Link to="/activity" />
                 </Menu.Item>
-                <Menu.Item key="3" icon={<UploadOutlined />}>
+                                
+                <Menu.Item key="/result" icon={<UploadOutlined />}>
                     Result
+                    <Link to="/result" />
                 </Menu.Item>
+                
             </Menu>
         </Sider>
     )

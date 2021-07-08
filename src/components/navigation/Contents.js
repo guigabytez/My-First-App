@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Layout } from 'antd'
 import axios from 'axios'
+import Dashboard from '../../menu_pages/Dashboard'
+import Activity from '../../menu_pages/Activity'
+import Result from '../../menu_pages/Result'
+import { 
+  Switch,
+  Route
+} from 'react-router-dom'
 
 import '../../styles/content.css'
 
@@ -18,16 +25,21 @@ const Contents = () => {
 
   }, [])
 
+  
   return (
     <Content
         className="site-layout-background"
         style={{
           margin: '24px 16px',
           padding: 24,
-          minHeight: 280,
+          minHeight: 'auto',
         }}
       >
-        Content
+        <Switch>
+          <Route path="/" component={Dashboard} exact />
+          <Route path="/activity" component={Activity} />
+          <Route path="/result" component={Result} />
+        </Switch>
     </Content>
   )
 }

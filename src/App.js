@@ -13,16 +13,14 @@ const App = () => {
     setIsCollapsed(toggleData)
   }
 
-  return (
-    <>
+  return (  
+    <Layout>
+      <Sidebar isCollapsed={isCollapsed}/>
       <Layout>
-        <Sidebar isCollapsed={isCollapsed}/>
-        <Layout>
-          <Navbar isCollapsed={isCollapsed} onCallBackToggle={callBackToggle}/>
-          <Content />
-        </Layout>
+        <Navbar isCollapsed={isCollapsed} onCallBackToggle={callBackToggle}/>
+        <Content />
       </Layout>
-    </>
+    </Layout>
   )
 }
 export default App
