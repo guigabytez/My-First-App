@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Layout } from 'antd'
 import axios from 'axios'
 import Dashboard from '../../menu_pages/Dashboard'
-import Activity from '../../menu_pages/Activity'
+import Activity from '../../menu_pages/Post'
 import Result from '../../menu_pages/Result'
 import { 
   Switch,
