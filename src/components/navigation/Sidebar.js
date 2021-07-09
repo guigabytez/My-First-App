@@ -26,9 +26,9 @@ const Sidebar = (props) => {
                     <Link to="/" />
                 </Menu.Item>
                 
-                <Menu.Item key="/activity" icon={<VideoCameraOutlined />}>
-                    Activity
-                    <Link to="/activity" />
+                <Menu.Item key="/post" icon={<VideoCameraOutlined />}>
+                    Post
+                    <Link to="/post" />
                 </Menu.Item>
                                 
                 <Menu.Item key="/result" icon={<UploadOutlined />}>
