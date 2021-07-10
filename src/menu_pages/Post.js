@@ -68,7 +68,7 @@ const Post = () => {
                         console.log('login: ', login);
                     return   (
                         // <Row>
-                            <Col span={6}>
+                            <Col xs={24} sm={24} md={12} lg={6}>
                                 <Card key={id}
                                     hoverable
                                     style={{ width: 240 }}
