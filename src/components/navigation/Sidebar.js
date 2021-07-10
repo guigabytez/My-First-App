@@ -9,7 +9,6 @@ import {
     Link
 } from 'react-router-dom'
 
-import '../../styles/sidebar.css'
 
 const { Sider } = Layout
 

@@ -5,7 +5,6 @@ import {
     MenuFoldOutlined
   } from '@ant-design/icons';
 
-import '../../styles/navbar.css'
 
 const { Header } = Layout
 

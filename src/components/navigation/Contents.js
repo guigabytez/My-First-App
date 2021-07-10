@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Layout } from 'antd'
-import axios from 'axios'
 import Dashboard from '../../menu_pages/Dashboard'
 import Post from '../../menu_pages/Post'
 import Result from '../../menu_pages/Result'
@@ -9,23 +8,11 @@ import {
   Route
 } from 'react-router-dom'
 
-import '../../styles/content.css'
 
 const { Content } = Layout
 
 
 const Contents = () => {
-  useEffect(async () => {
-    // const result = await axios('https://jsonplaceholder.typicode.com').get('/posts')
-
-    // axios('https://jsonplaceholder.typicode.com')
-    //   .get('/posts')
-    //   .then(data => console.log(data))
-    //   .catch(err => console.warn(err))
-
-  }, [])
-
-  
   return (
     <Content
         className="site-layout-background"
