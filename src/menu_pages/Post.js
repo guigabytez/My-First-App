@@ -30,7 +30,8 @@ const Post = () => {
     const postsReq = async () => {
         const posts = await axios({
             method: 'get',
-            url: 'http://localhost:5000/posts',
+            url: 'https://ap-southeast-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/learn-rxygj/service/Posts/incoming_webhook/getAll',
+            //url: 'http://localhost:5000/posts',
         })
         setPostData(posts.data)
     }
