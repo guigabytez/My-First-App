@@ -1,80 +1,91 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Card, Table, Space, Row, Col } from 'antd';
+import { Card, Table, Space, Row, Col, Button, Tooltip } from 'antd';
+import {EditFilled, DeleteFilled} from '@ant-design/icons'
 
 const { Meta } = Card
 
 const Post = () => {
-    const [postData, setPostData] = useState([])
-    console.log('postData: ', postData);
+    
+    // const [usersData, setusersData] = useState([])
+    const [postsData, setPostData] = useState([])
+    // console.log('usersData: ', usersData);
+    console.log('postsData:', postsData);
     
     
     useEffect(() => {
-        
-        request()
-        
+        //request()
+        postsReq()    
     }, [])
 
-    const request = async () => {
-        const result = await axios({
-          method: 'get',
-          url: 'https://api.github.com/users',
-        //   url: 'https://jsonplaceholder.typicode.com/posts',
-        })
-        setPostData(result.data)
-    }
+    // const request = async () => {
+    //     const result = await axios({
+    //       method: 'get',
+    //       url: 'https://api.github.com/users',
+    //     //   url: 'https://jsonplaceholder.typicode.com/posts',
+    //     })
+    //     setusersData(result.data)
+    // }
 
-    // const columns = [
-    //     {
-    //       title: 'Post ID',
-    //       dataIndex: 'id',
-    //       key: 'id',
-          
-    //     },
-    //     {
-    //       title: 'Post Body',
-    //       dataIndex: 'body',
-    //       key: 'body',
-    //     },
-    //     {
-    //       title: 'Post Title',
-    //       dataIndex: 'title',
-    //       key: 'title',
-    //     },
-    //     {
-    //       title: 'User ID',
-    //       key: 'userId',
-    //       dataIndex: 'userId',
-         
-    //     },
-    //     {
-    //       title: 'Action',
-    //       key: 'action',
-    //       render: (text, post) => (
-    //         <Space size="middle">
-    //           <a>Invite User: {post.userId}</a>
-    //           <a>Delete</a>
-    //         </Space>
-    //       ),
-    //     },
-    //   ];
+    const postsReq = async () => {
+        const posts = await axios({
+            method: 'get',
+            url: 'http://localhost:5000/posts',
+        })
+        setPostData(posts.data)
+    }
+    
+    const columns = [
+        {
+          title: 'Post ID',
+          dataIndex: '_id',
+          key: 'id',         
+        },
+        {
+          title: 'Title',
+          dataIndex: 'title',
+          key: 'body',
+        },
+        {
+          title: 'Descrtiption',
+          dataIndex: 'title',
+          key: 'title',
+        },
+        {
+          title: 'Action',
+          key: 'action',
+          render: (text, posts) => (
+            <Space size="middle">
+              {/* <a>Invite User: {posts._id}</a> */}
+              <Tooltip title="Edit">
+                {/* onClick={'handleClickEdit'} */}
+                <Button shape="circle" icon={<EditFilled />} />
+              </Tooltip>
+              <Tooltip title="Delete">
+                {/* onClick={'handleClickDelete'} */}
+                <Button shape="circle" icon={<DeleteFilled />} />
+              </Tooltip>              
+            </Space>
+          ),
+        },
+      ];
 
     return (
         <div className="post-card">
-            <Row>
+            {/* <Row>
 
                 {
-                    postData.map(({ login , id, avatar_url }) => {
-                        console.log('login: ', login);
+                    usersData.map(({ login , id, html_url, avatar_url }) => {
+                        // console.log('login: ', login);
                     return   (
                         // <Row>
-                            <Col xs={24} sm={24} md={12} lg={6}>
+                            <Col xs={24} sm={24} md={8} lg={6}>
                                 <Card key={id}
                                     hoverable
                                     style={{ width: 240 }}
                                     cover={<img alt="example" src={avatar_url}/>}
                                 >
-                                    <Meta title={login} description={avatar_url} />
+                                    <Meta title={login} description={html_url} />
                                     
                                 </Card>
                             </Col>
@@ -84,10 +95,10 @@ const Post = () => {
                     })
 
                 }
-            </Row>
+            </Row> */}
             
-            {/* <Card title="Default size card" > */}
-            {/* {
+            {/* <Card title="Default size card" > 
+            {
                 postsData.map(({ id, body, title }) => (
                     <div key={id} style={{ borderBottom: '1px solid black' }}>
                         <p style={{ fontStyle: 'italic' }}>{title}</p>
@@ -95,10 +106,9 @@ const Post = () => {
                         <span>{body}</span>
                     </div>
                 ))
-            } */}
-                {/* <Table columns={columns} dataSource={postData}/> */}
-               
-            {/* </Card> */}
+            }
+             </Card> */}
+             <Table columns={columns} dataSource={postsData}/>
         </div>
         
     )
